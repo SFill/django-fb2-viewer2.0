@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{%block stylesheet%}
+    <style>
+       ul.hr {
+        margin: 0; /* Обнуляем значение отступов */
+        padding: 4px; /* Значение полей */
+       }
+       ul.hr li {
+        display: inline; /* Отображать как строчный элемент */
+        margin-right: 5px; /* Отступ слева */
+
+        padding: 3px; /* Поля вокруг текста */
+       }
+    </style>
+{%endblock%}
+
+{% block content %}
+{% autoescape off %}
+
+{% for section, path in sections %}
+    <ul class="hr" >
+        <li style = "border: 1px solid #000; /* Рамка вокруг текста */
+                    background: #95EC00;
+            "><a href="/sample/get/{{path}}">Скачать</a></li>
+        <li>{{section}}</li>
+    </ul>
+{% endfor %}
+
+{%endautoescape%}
+{% endblock %}

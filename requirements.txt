@@ -1,0 +1,4 @@
+#Packages
+xml
+django == 1.8
+beautifulsoup4
